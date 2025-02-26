@@ -1,7 +1,7 @@
 'use client';
 
+import { Button, Card } from 'pixel-retroui';
 import { QRCodeCanvas } from 'qrcode.react';
-import { Button, Window, WindowContent, WindowHeader } from 'react95';
 
 import { useRouter } from 'next/navigation';
 
@@ -9,26 +9,30 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <div className="flex min-h-screen items-center justify-center">
-      <Window resizable className="h-96 w-96">
-        <WindowHeader>
-          <span>SafeQR.exe</span>
-        </WindowHeader>
-        <WindowContent className="flex flex-col items-center space-y-4">
+    <>
+      <Card className="h-96 w-80 p-4">
+        <h1 className="absolute left-4 top-4 text-xl font-bold">SafeQR</h1>
+        <div className="flex min-h-full flex-col items-center justify-between space-y-4">
           <p className="text-center">
             Welcome to your secure data-transfer experience! Click on the
             buttons below to continue.
           </p>
-          <QRCodeCanvas
-            className="bg-white p-2"
-            value="https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1"
-          />
-          <div className="flex space-x-2">
-            <Button onClick={() => router.push('/scan')}>Scan</Button>
-            <Button onClick={() => router.push('/create')}>Create</Button>
+          <Card>
+            <QRCodeCanvas
+              className="bg-white p-2"
+              value="https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1"
+            />
+          </Card>
+          <div className="flex w-full space-x-2">
+            <Button onClick={() => router.push('/scan')} className="w-full">
+              Scan
+            </Button>
+            <Button onClick={() => router.push('/create')} className="w-full">
+              Create
+            </Button>
           </div>
-        </WindowContent>
-      </Window>
-    </div>
+        </div>
+      </Card>
+    </>
   );
 }
