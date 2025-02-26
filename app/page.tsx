@@ -1,25 +1,26 @@
 'use client';
 
 import { Button, Card } from 'pixel-retroui';
-import { QRCodeCanvas } from 'qrcode.react';
+import { QRCodeSVG } from 'qrcode.react';
 
 import { useRouter } from 'next/navigation';
 
-export default function Home() {
+export default function HomePage() {
   const router = useRouter();
 
   return (
     <>
-      <Card className="h-96 w-80 p-4">
+      <Card className="mx-10 h-96 w-80 p-4">
         <h1 className="absolute left-4 top-4 text-xl font-bold">SafeQR</h1>
         <div className="flex min-h-full flex-col items-center justify-between space-y-4">
           <p className="text-center">
-            Welcome to your secure data-transfer experience! Click on the
+            Welcome to your <b>secure data-transfer</b> experience! Click on the
             buttons below to continue.
           </p>
-          <Card>
-            <QRCodeCanvas
-              className="bg-white p-2"
+          <Card className="bg-primary-foreground">
+            <QRCodeSVG
+              className="bg-primary-foreground p-2"
+              bgColor="#fefcd0"
               value="https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1"
             />
           </Card>

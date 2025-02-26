@@ -7,6 +7,8 @@
 :root {
   --background: rgb(85, 170, 170);
   --foreground: #171717;
+  --primary: #c381b5;
+  --primary-foreground: #fefcd0;
 }
 
 body {
