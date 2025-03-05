@@ -1,40 +1,22 @@
 'use client';
 
-import {
-  Button,
-  Card,
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  Input,
-} from 'pixel-retroui';
+import { Button, Card, Input } from 'pixel-retroui';
 
 import { useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 
+import { encryptData } from '@/lib/crypto';
+
 export default function CreatePage() {
   const [url, setUrl] = useState('');
-  const [algorithm, setAlgorithm] = useState('');
   const [passkey, setPasskey] = useState('');
   const router = useRouter();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    const encryptedContent = encryptContent(url, passkey, algorithm);
-    router.push(
-      `/qr?content=${encodeURIComponent(encryptedContent)}&algorithm=${algorithm}`
-    );
-  };
-
-  const encryptContent = (
-    content: string,
-    passkey: string,
-    algorithm: string
-  ) => {
-    // TODO: Implement encryption logic
-    return btoa(content); // Example: using base64 encoding as a placeholder
+    const encryptedContent = encryptData(url, passkey);
+    router.push(`/qr?content=${encodeURIComponent(encryptedContent)}`);
   };
 
   return (
@@ -53,29 +35,6 @@ export default function CreatePage() {
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
               />
-            </div>
-            <div className="space-y-2">
-              <label htmlFor="algorithm">Encryption Algorithm</label>
-              <DropdownMenu className="w-full">
-                <DropdownMenuTrigger
-                  className="w-full"
-                  type="button"
-                  onChange={(e) => console.log(e)}
-                >
-                  {algorithm || 'Choose an algorithm...'}
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white">
-                  <DropdownMenuItem className="w-full">
-                    Option 1
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="w-full">
-                    Option 2
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="w-full">
-                    Option 3
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
             </div>
             <div className="space-y-2">
               <label htmlFor="passkey">Passkey</label>
