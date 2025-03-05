@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Card, Input } from 'pixel-retroui';
+import { Button, Card, Input, TextArea } from 'pixel-retroui';
 
 import { useState } from 'react';
 
@@ -9,13 +9,13 @@ import { useRouter } from 'next/navigation';
 import { encryptData } from '@/lib/crypto';
 
 export default function CreatePage() {
-  const [url, setUrl] = useState('');
+  const [text, setText] = useState('');
   const [passkey, setPasskey] = useState('');
   const router = useRouter();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    const encryptedContent = encryptData(url, passkey);
+    const encryptedContent = encryptData(text, passkey);
     router.push(`/qr?content=${encodeURIComponent(encryptedContent)}`);
   };
 
@@ -27,13 +27,13 @@ export default function CreatePage() {
           <h1 className="text-lg font-bold">Create a QR Code</h1>
           <div className="flex flex-col space-y-4">
             <div className="space-y-2">
-              <label htmlFor="url">URL</label>
-              <Input
-                id="url"
-                placeholder="https://youtube.com/"
-                type="url"
-                value={url}
-                onChange={(e) => setUrl(e.target.value)}
+              <label htmlFor="text">Text</label>
+              <TextArea
+                id="text"
+                placeholder="Enter your text here..."
+                value={text}
+                className="resize-none"
+                onChange={(e) => setText(e.target.value)}
               />
             </div>
             <div className="space-y-2">
