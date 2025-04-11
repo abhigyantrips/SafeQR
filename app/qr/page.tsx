@@ -5,6 +5,12 @@ export default async function QrPage(props: {
 }) {
   const searchParams = await props.searchParams;
   const content = searchParams.content;
+  const hiddenData = searchParams.hiddenData;
 
-  return <QrPageClient content={(content as string) ?? ''} />;
+  return (
+    <QrPageClient
+      content={(content as string) ?? ''}
+      hiddenData={(hiddenData as string) ?? ''}
+    />
+  );
 }
