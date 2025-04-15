@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
+  title: 'SafeQR',
   icons: {
     icon: '/favicon.png',
   },
