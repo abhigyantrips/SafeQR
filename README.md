@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# [SafeQR](https://safeqr.abhigyantrips.dev)
 
-## Getting Started
+> ⚠️ This project exists for **educational purposes only**.
 
-First, run the development server:
+Transfer data through QR codes, using encryption and steganography. SafeQR allows users to create QR codes with AES-256 encryption using a passkey, which they can then use to decode the data on the other end.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+The algorithm also encodes data into the image itself through steganography, which can later be decoded using the same passkey.
+
+![Example Screenshot](/public/example-screenshot.png)
+
+## Technologies Used
+
+This website has been built almost completely in TypeScript with the following frameworks.
+
+1. [Next.JS](https://nextjs.org), with Static Site Generation.
+2. [TailwindCSS](https://tailwindcss.com), for styling.
+3. [React95](https://react95.github.io/React95/), a UI component library based on Windows95.
+4. [CryptoJS](https://www.npmjs.com/package/crypto-js), a JavaScript library of crypto standards.
+
+## Development
+
+Install the dependencies using `pnpm`.
+
+```console
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the development server using the following command.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```console
+pnpm dev
+```
