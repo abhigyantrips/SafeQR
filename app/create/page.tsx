@@ -33,7 +33,9 @@ export default function CreatePage() {
   return (
     <form onSubmit={handleSubmit}>
       <Card className="mx-10 min-h-96 w-80 p-4">
-        <h1 className="absolute left-4 top-4 text-xl font-bold">Create QR</h1>
+        <a className="absolute left-4 top-4 hover:text-white" href="/">
+          <h1 className="text-xl font-bold">SafeQR</h1>
+        </a>
         <div className="flex min-h-full flex-col items-center justify-between space-y-4">
           <h1 className="text-lg font-bold">Create a QR Code</h1>
           <div className="flex flex-col space-y-4">
