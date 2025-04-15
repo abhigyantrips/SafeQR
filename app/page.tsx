@@ -11,7 +11,9 @@ export default function HomePage() {
   return (
     <>
       <Card className="mx-10 h-96 w-80 p-4">
-        <h1 className="absolute left-4 top-4 text-xl font-bold">SafeQR</h1>
+        <a className="absolute left-4 top-4 hover:text-white" href="/">
+          <h1 className="text-xl font-bold">SafeQR</h1>
+        </a>
         <div className="flex min-h-full flex-col items-center justify-between space-y-4">
           <p className="text-center">
             Welcome to your <b>secure data-transfer</b> experience! Click on the

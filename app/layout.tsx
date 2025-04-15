@@ -4,6 +4,7 @@ import '@/styles/globals.css';
 
 export const metadata: Metadata = {
   title: 'SafeQR',
+  description: 'Transfer encrypted data through QR codes.',
   icons: {
     icon: '/favicon.png',
   },
