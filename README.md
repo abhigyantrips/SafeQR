@@ -17,6 +17,10 @@ This website has been built almost completely in TypeScript with the following f
 3. [React95](https://react95.github.io/React95/), a UI component library based on Windows95.
 4. [CryptoJS](https://www.npmjs.com/package/crypto-js), a JavaScript library of crypto standards.
 
+## Video Demonstration
+
+https://github.com/user-attachments/assets/b101562e-b3d3-4345-b943-cc2744d8fafb
+
 ## Development
 
 Install the dependencies using `pnpm`.
